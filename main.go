@@ -98,9 +98,7 @@ func getActiveTasks(apiToken string) ([]Task, error) {
 
 	filteredTasks := make([]Task, 0)
 	for _, task := range tasks {
-		if strings.HasPrefix(task.Content, "Test Reminder") {
-			filteredTasks = append(filteredTasks, task)
-		}
+		filteredTasks = append(filteredTasks, task)
 	}
 
 	return filteredTasks, nil
