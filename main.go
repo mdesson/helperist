@@ -42,7 +42,7 @@ type Task struct {
 type Reminder struct {
 	Due          Due    `json:"due"`
 	ID           string `json:"id"`
-	IsDeleted    int    `json:"is_deleted"`
+	IsDeleted    bool   `json:"is_deleted"`
 	ItemID       string `json:"item_id"`
 	NotifyUID    string `json:"notify_uid"`
 	Type         string `json:"type"`
@@ -211,7 +211,7 @@ func hasReminder(apiToken string, itemID string) (bool, error) {
 			return false, err
 		}
 
-		if r.ItemID == itemID && r.Type == "absolute" && r.IsDeleted == 0 {
+		if r.ItemID == itemID && r.Type == "absolute" && !r.IsDeleted {
 			return true, nil
 		}
 	}

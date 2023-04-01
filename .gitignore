@@ -13,3 +13,12 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+# output binary
+helperist
+
+# logs
+*.log
+
+# bash file for running locally
+run.sh
